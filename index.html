@@ -1,90 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ThaurovêniaRPG</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThaurovêniaRPG - Ficha de Personagem</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="sheet">
-    <section class="top-grid">
-      <label class="field wide"><span>NOME:</span><input id="nome" type="text" maxlength="120"></label>
-      <label class="field wide"><span>JOGADOR:</span><input id="jogador" type="text" maxlength="120"></label>
+    <main class="sheet">
+        <!-- Informações Principais -->
+        <section class="top-grid">
+            <!-- Linha 1 -->
+            <label class="field field-nome">
+                <span>NOME:</span>
+                <input id="nome" type="text" maxlength="50" placeholder="">
+            </label>
+            <label class="field field-jogador">
+                <span>JOGADOR:</span>
+                <input id="jogador" type="text" maxlength="20" placeholder="">
+            </label>
 
-      <label class="field"><span>NVL:</span><input id="nivel" type="number" min="0" max="20" value="0"></label>
-      <label class="field"><span>XP:</span><input id="xp" type="number" min="0" max="999" value="0"></label>
-      <div class="field rsq-field">
-        <span>RSQ:</span>
-        <div class="rsq-options" role="group" aria-label="Resistência">
-          <label class="rsq-option rsq-yellow"><input type="radio" name="rsq" value="amarelo"><i></i></label>
-          <label class="rsq-option rsq-light-yellow"><input type="radio" name="rsq" value="amarelo-claro"><i></i></label>
-          <label class="rsq-option rsq-gray"><input type="radio" name="rsq" value="cinza"><i></i></label>
-          <label class="rsq-option rsq-light-red"><input type="radio" name="rsq" value="vermelho-claro"><i></i></label>
-          <label class="rsq-option rsq-red"><input type="radio" name="rsq" value="vermelho"><i></i></label>
-        </div>
-      </div>
-      <label class="field"><span>CLASSE:</span><input id="classe" type="text" maxlength="80"></label>
-      <label class="field"><span>CAMINHO:</span><input id="caminho" type="text" maxlength="80"></label>
-    </section>
+            <!-- Linha 2 -->
+            <label class="field field-nivel">
+                <span>NVL:</span>
+                <input id="nivel" type="number" min="0" max="20" value="0">
+            </label>
+            <label class="field field-xp">
+                <span>XP:</span>
+                <input id="xp" type="number" min="0" max="999" value="0">
+            </label>
 
-    <section class="main-grid">
-      <section class="attributes-panel">
-        <div class="attribute-wheel">
-          <div class="attribute top yellow">
-            <label>MENTE<input id="men" type="number" min="1" max="6" value="1"></label>
-          </div>
-          <div class="attribute right red">
-            <label>FÍSICO<input id="fis" type="number" min="1" max="6" value="1"></label>
-          </div>
-          <div class="attribute bottom purple">
-            <label>PRONTIDÃO<input id="pro" type="number" min="1" max="6" value="1"></label>
-          </div>
-          <div class="attribute left blue">
-            <label>RESISTÊNCIA<input id="res" type="number" min="1" max="6" value="1"></label>
-          </div>
-          <div class="attribute center">
-            <label>SORTE<input id="sor" type="number" min="0" max="4" value="0"></label>
-          </div>
-        </div>
-
-        <div class="resource-grid">
-          <section class="resource-box">
-            <h2>VIDA</h2>
-            <div class="resource-values">
-              <label>ATUAL<input id="vidaAtual" type="number" min="0" max="999" value="0"></label>
-              <label>MÁXIMA<input id="vidaMaxima" type="number" min="0" max="999" value="0"></label>
+            <div class="field rsq-field">
+                <span class="rsq-title">RSQ:</span>
+                <div class="rsq-options" role="group" aria-label="Resistência">
+                    <label class="rsq-option rsq-yellow" title="Amarelo">
+                        <input type="radio" name="rsq" value="amarelo"><i></i>
+                    </label>
+                    <label class="rsq-option rsq-light-yellow" title="Amarelo Claro">
+                        <input type="radio" name="rsq" value="amarelo-claro"><i></i>
+                    </label>
+                    <label class="rsq-option rsq-gray" title="Cinza">
+                        <input type="radio" name="rsq" value="cinza" checked><i></i>
+                    </label>
+                    <label class="rsq-option rsq-light-red" title="Vermelho Claro">
+                        <input type="radio" name="rsq" value="vermelho-claro"><i></i>
+                    </label>
+                    <label class="rsq-option rsq-red" title="Vermelho">
+                        <input type="radio" name="rsq" value="vermelho"><i></i>
+                    </label>
+                </div>
             </div>
-          </section>
-          <section class="resource-box">
-            <h2>VONTADE</h2>
-            <div class="resource-values">
-              <label>ATUAL<input id="vontadeAtual" type="number" min="0" max="999" value="0"></label>
-              <label>MÁXIMA<input id="vontadeMaxima" type="number" min="0" max="999" value="0"></label>
-            </div>
-          </section>
-        </div>
-      </section>
 
-      <section class="right-panel">
-        <section class="notes-box">
-          <h2>ANOTAÇÕES</h2>
-          <textarea id="anotacoes" spellcheck="false"></textarea>
+            <label class="field field-classe">
+                <span>CLASSE:</span>
+                <input id="classe" type="text" maxlength="20" placeholder="">
+            </label>
+            <label class="field field-caminho">
+                <span>CAMINHO:</span>
+                <input id="caminho" type="text" maxlength="20" placeholder="">
+            </label>
         </section>
 
-        <section class="combat-panel">
-          <div class="combat-stat"><h3>ESQUIVA</h3><output id="esquiva">9</output></div>
-          <div class="combat-stat"><h3>BLOQUEIO</h3><output id="bloqueio">7</output></div>
-          <div class="combat-stat"><h3>ATAQUE</h3><output id="ataque">7</output></div>
-          <div class="actions">
-            <button id="salvar" type="button">SALVAR</button>
-            <button id="copiar" type="button" disabled>COPIAR <span aria-hidden="true">🔗</span></button>
-          </div>
+        <!-- Painel Principal -->
+        <section class="main-grid">
+            <!-- Coluna Esquerda: Atributos + Recursos -->
+            <div class="left-column">
+                <section class="card attributes-card">
+                    <h2 class="card-title">ATRIBUTOS</h2>
+                    <div class="attribute-wheel">
+                        <div class="attribute top yellow">
+                            <label>MENTE<input id="men" type="number" min="1" max="6" value="1"></label>
+                        </div>
+                        <div class="attribute right red">
+                            <label>FÍSICO<input id="fis" type="number" min="1" max="6" value="1"></label>
+                        </div>
+                        <div class="attribute bottom purple">
+                            <label>PRONTIDÃO<input id="pro" type="number" min="1" max="6" value="1"></label>
+                        </div>
+                        <div class="attribute left blue">
+                            <label>RESISTÊNCIA<input id="res" type="number" min="1" max="6" value="1"></label>
+                        </div>
+                        <div class="attribute center green">
+                            <label>SORTE<input id="sor" type="number" min="0" max="4" value="0"></label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="resource-grid">
+                    <section class="card resource-box">
+                        <h2 class="card-title">VIDA</h2>
+                        <div class="resource-values">
+                            <label>ATUAL<input id="vidaAtual" type="number" min="0" max="999" value="0"></label>
+                            <label>MÁXIMA<input id="vidaMaxima" type="number" min="0" max="999" value="0"></label>
+                        </div>
+                    </section>
+                    <section class="card resource-box">
+                        <h2 class="card-title">VONTADE</h2>
+                        <div class="resource-values">
+                            <label>ATUAL<input id="vontadeAtual" type="number" min="0" max="999" value="0"></label>
+                            <label>MÁXIMA<input id="vontadeMaxima" type="number" min="0" max="999" value="0"></label>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+            <!-- Coluna Direita: Combate + Anotações -->
+            <div class="right-column">
+                <section class="card notes-box">
+                    <h2 class="card-title">ANOTAÇÕES</h2>
+                    <textarea id="anotacoes" spellcheck="false" placeholder="Escreva suas anotações aqui..."></textarea>
+                </section>
+
+                <section class="card combat-panel">
+                    <h2 class="card-title">ESTATÍSTICAS DE COMBATE</h2>
+                    <div class="combat-stats-grid">
+                        <div class="combat-stat">
+                            <h3>ESQUIVA</h3>
+                            <output id="esquiva">8</output>
+                        </div>
+                        <div class="combat-stat">
+                            <h3>BLOQUEIO</h3>
+                            <output id="bloqueio">2</output>
+                        </div>
+                        <div class="combat-stat">
+                            <h3>ATAQUE</h3>
+                            <output id="ataque">5</output>
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button id="salvar" type="button" class="btn btn-primary">SALVAR FICHA</button>
+                        <button id="copiar" type="button" class="btn btn-secondary" disabled>COPIAR LINK 🔗</button>
+                    </div>
+                </section>
+            </div>
         </section>
-      </section>
-    </section>
-    <p id="status" class="status" role="status" aria-live="polite"></p>
-  </main>
-  <script src="script.js"></script>
+    </main>
+    <script src="script.js"></script>
 </body>
+
 </html>
