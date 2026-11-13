@@ -14,13 +14,13 @@
         <!-- Informações Principais -->
         <section class="top-grid">
             <!-- Linha 1 -->
-            <label class="field field-nome">
-                <span>NOME:</span>
-                <input id="nome" type="text" maxlength="50" placeholder="">
-            </label>
             <label class="field field-jogador">
                 <span>JOGADOR:</span>
                 <input id="jogador" type="text" maxlength="20" placeholder="">
+            </label>
+            <label class="field field-nome">
+                <span>NOME:</span>
+                <input id="nome" type="text" maxlength="50" placeholder="">
             </label>
 
             <!-- Linha 2 -->
@@ -30,7 +30,7 @@
             </label>
             <label class="field field-xp">
                 <span>XP:</span>
-                <input id="xp" type="number" min="0" max="999" value="0">
+                <input id="xp" type="number" min="0" max="2500" value="0">
             </label>
 
             <div class="field rsq-field">
@@ -90,50 +90,63 @@
                 </section>
 
                 <section class="resource-grid">
-                    <section class="card resource-box">
-                        <h2 class="card-title">VIDA</h2>
-                        <div class="resource-values">
-                            <label>ATUAL<input id="vidaAtual" type="number" min="0" max="999" value="0"></label>
-                            <label>MÁXIMA<input id="vidaMaxima" type="number" min="0" max="999" value="0"></label>
-                        </div>
-                    </section>
-                    <section class="card resource-box">
-                        <h2 class="card-title">VONTADE</h2>
-                        <div class="resource-values">
-                            <label>ATUAL<input id="vontadeAtual" type="number" min="0" max="999" value="0"></label>
-                            <label>MÁXIMA<input id="vontadeMaxima" type="number" min="0" max="999" value="0"></label>
-                        </div>
-                    </section>
+
                 </section>
             </div>
 
-            <!-- Coluna Direita: Combate + Anotações -->
+            <!-- Coluna Direita: Combate -->
             <div class="right-column">
-                <section class="card notes-box">
-                    <h2 class="card-title">ANOTAÇÕES</h2>
-                    <textarea id="anotacoes" spellcheck="false" placeholder="Escreva suas anotações aqui..."></textarea>
-                </section>
-
                 <section class="card combat-panel">
-                    <h2 class="card-title">ESTATÍSTICAS DE COMBATE</h2>
-                    <div class="combat-stats-grid">
-                        <div class="combat-stat">
-                            <h3>ESQUIVA</h3>
-                            <output id="esquiva">8</output>
+                    <!-- ESTATÍSTICAS DE COMBATE -->
+                    <div class="card">
+
+                        <div class="card-title">ESTATÍSTICAS DE COMBATE</div>
+
+                        <div style="margin-bottom: 18px;">
+                            <section class="card resource-box" style="width: 50%;">
+                                <h2 class="card-title">VIDA</h2>
+                                <div class="resource-values">
+                                    <label>ATUAL<input id="vidaAtual" type="number" min="0" max="999" value="0"></label>
+                                    <label>MÁXIMA<input id="vidaMaxima" type="number" min="0" max="999"
+                                            value="0"></label>
+                                </div>
+                            </section>
+                            <section class="card resource-box"
+                                style="width: 50%; margin-left: 52%; bottom: 52%; margin-top: -135px;">
+                                <h2 class="card-title">VONTADE</h2>
+                                <div class="resource-values">
+                                    <label>ATUAL<input id="vontadeAtual" type="number" min="0" max="999"
+                                            value="0"></label>
+                                    <label>MÁXIMA<input id="vontadeMaxima" type="number" min="0" max="999"
+                                            value="0"></label>
+                                </div>
+                            </section>
                         </div>
-                        <div class="combat-stat">
-                            <h3>BLOQUEIO</h3>
-                            <output id="bloqueio">2</output>
+                        <div class="combat-stats-grid">
+
+                            <div class="combat-stat">
+                                <h3>ESQUIVA</h3>
+                                <input type="number" id="esquiva" min="0" max="99" value="0">
+                            </div>
+
+                            <div class="combat-stat">
+                                <h3>BLOQUEIO</h3>
+                                <input type="number" id="bloqueio" min="0" max="99" value="0">
+                            </div>
+
+                            <div class="combat-stat">
+                                <h3>ATAQUE</h3>
+                                <input type="number" id="ataque" min="0" max="99" value="0">
+                            </div>
+
                         </div>
-                        <div class="combat-stat">
-                            <h3>ATAQUE</h3>
-                            <output id="ataque">5</output>
+
+                        <div class="actions">
+                            <button type="button" id="salvar" class="btn btn-primary">SALVAR FICHA</button>
+                            <button type="button" id="copiar" class="btn btn-secondary" disabled>COPIAR LINK 🔗</button>
                         </div>
                     </div>
-                    <div class="actions">
-                        <button id="salvar" type="button" class="btn btn-primary">SALVAR FICHA</button>
-                        <button id="copiar" type="button" class="btn btn-secondary" disabled>COPIAR LINK 🔗</button>
-                    </div>
+
                 </section>
             </div>
         </section>
